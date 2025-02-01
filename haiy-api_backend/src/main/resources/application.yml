@@ -1,6 +1,6 @@
 spring:
   application:
-    name: haiy_api_backend
+    name: haiy-api_backend
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

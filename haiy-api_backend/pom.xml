@@ -10,9 +10,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yupi</groupId>
-    <artifactId>haiy_api_backend</artifactId>
+    <artifactId>haiy-api_backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>haiy_api_backend</name>
+    <name>haiy-api_backend</name>
     <description>springboot 初始项目</description>
     <properties>
         <java.version>1.8</java.version>
