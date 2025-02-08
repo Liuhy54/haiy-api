@@ -18,6 +18,9 @@ import static com.haiy.haiyapiclientsdk.utils.SignUtils.genSign;
  * @author haiy
  */
 public class HaiyApiClient {
+
+    private static final String GATEWAY_HOST = "http://localhost:8090";
+
     private  String accessKey;
 
     private  String secretKey;
@@ -31,7 +34,7 @@ public class HaiyApiClient {
         //可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result3 = HttpUtil.get("http://localhost:8123/api/name/", paramMap);
+        String result3 = HttpUtil.get(GATEWAY_HOST + "/api/name/", paramMap);
         System.out.println(result3);
         return result3;
     }
@@ -40,7 +43,7 @@ public class HaiyApiClient {
         //可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("name", name);
-        String result3 = HttpUtil.post("http://localhost:8123/api/name/", paramMap);
+        String result3 = HttpUtil.post(GATEWAY_HOST + "/api/name/", paramMap);
         System.out.println(result3);
         return result3;
     }
@@ -59,7 +62,7 @@ public class HaiyApiClient {
     }
     public String getUserNameByPost(User user) {
         String json = JSONUtil.toJsonStr(user);
-        HttpResponse httpResponse = HttpRequest.post("http://localhost:8123/api/name/user")
+        HttpResponse httpResponse = HttpRequest.post(GATEWAY_HOST + "/api/name/user")
                 .addHeaders(getHeaderMap(json))
                 .body(json)
                 .execute();

@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/name")
 public class NameController {
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public String getNameByGet(String name, HttpServletRequest request) {
+        System.out.println(request.getHeader("haiy-head"));
         return "GET 你的名字是："+name;
     }
 
-    @PostMapping("/")
+    @PostMapping("/post")
     public String getNameByPost(@RequestParam  String name) {
         return  "POST 你的名字是："+name;
     }
@@ -46,6 +47,10 @@ public class NameController {
         if (!sign.equals(serverSign)){
             throw new RuntimeException("无权限");
         }
-        return  "POST 用户名字是："+ user.getUsername();
+        // todo 调用成功后次数+1 invokeCount
+        String result =  "POST 用户名字是："+ user.getUsername();
+
+
+        return result;
     }
 }
