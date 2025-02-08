@@ -3,6 +3,15 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for haiy-api-gateway" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../app/idea/maven/Repository/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="haiy-api-gateway" />
+      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -16,7 +25,6 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$PROJECT_DIR$/../../app/idea/maven/Repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-          <entry name="$PROJECT_DIR$/../../app/idea/maven/Repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="haiy-api_interface" />
       </profile>
@@ -25,6 +33,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="haiy-api-client-sdk" options="-parameters" />
+      <module name="haiy-api-gateway" options="-parameters" />
       <module name="haiy-api_backend" options="-parameters" />
       <module name="haiy-api_interface" options="-parameters" />
     </option>

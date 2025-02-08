@@ -1,5 +1,5 @@
 -- 接口信息
-create table if not exists haiy_api.`interface_info`
+create table if not exists haiy_api.`user_interface_info`
 (
     `id` bigint not null auto_increment comment '主键' primary key,
     `name` varchar(256) not null comment '名称',
@@ -14,4 +14,4 @@ create table if not exists haiy_api.`interface_info`
     `createTime` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
     `updateTime` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     `isDelete` tinyint default 0 not null comment '是否删除(0-未删, 1-已删)'
-    ) comment '接口信息';
+) comment '接口信息';

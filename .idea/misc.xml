@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/haiy-api_backend/pom.xml" />
         <option value="$PROJECT_DIR$/haiy-api_interface/pom.xml" />
         <option value="$PROJECT_DIR$/haiy-api-client-sdk/pom.xml" />
+        <option value="$PROJECT_DIR$/haiy-api-gateway/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: haiy-api-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - AddRequestParameter=name, dog
+      routes:
+        - id: api_route
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+#        - id: add_request_header_route
+#          uri: http://localhost:8123/api/name
+#          predicates:
+#            - Path=/api/**
+#          filters:
+#            - AddRequestHeader=haiy-head, swag
+#            - AddRequestParameter=name, dog
+server:
+  port: 8090
+# 设置日志的输出级别为最低
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
