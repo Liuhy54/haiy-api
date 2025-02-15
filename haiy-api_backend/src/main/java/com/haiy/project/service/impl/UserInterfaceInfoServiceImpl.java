@@ -3,14 +3,14 @@ package com.haiy.project.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.haiy.haiyapicommon.model.entity.UserInterfaceInfo;
 import com.haiy.project.common.ErrorCode;
 import com.haiy.project.exception.BusinessException;
-import com.haiy.project.model.entity.InterfaceInfo;
-import com.haiy.project.model.entity.UserInterfaceInfo;
-import com.haiy.project.service.UserInterfaceInfoService;
 import com.haiy.project.mapper.UserInterfaceInfoMapper;
-import org.apache.commons.lang3.StringUtils;
+import com.haiy.project.service.UserInterfaceInfoService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
 * @author lhynb54
@@ -19,7 +19,8 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoMapper, UserInterfaceInfo>
-    implements UserInterfaceInfoService{
+    implements UserInterfaceInfoService {
+
 
     @Override
     public void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add) {
@@ -36,6 +37,8 @@ public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoM
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "剩余调用次数不能小于0");
         }
     }
+
+
 
     @Override
     public boolean invokeCount(long interfaceInfoId, long userId) {

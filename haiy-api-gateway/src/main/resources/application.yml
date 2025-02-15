@@ -20,9 +20,21 @@ spring:
 server:
   port: 8090
 # 设置日志的输出级别为最低
-logging:
-  level:
-    org:
-      springframework:
-        cloud:
-          gateway: trace
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        cloud:
+#          gateway: trace
+
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-consumer
+    qos:
+      port: 22223  # 修改为未被占用的端口
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848

@@ -4,11 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0ad5e4b-6705-4f80-ab71-cd0920e34519" name="更改" comment="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制" />
+    <list default="true" id="e0ad5e4b-6705-4f80-ab71-cd0920e34519" name="更改" comment="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/project/provider/DemoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/entity/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/enums/InterfaceInfoStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/enums/PostGenderEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/enums/PostReviewStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/vo/PostVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/vo/UserVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/service/InnerInterfaceInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/service/InnerUserInterfaceInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/service/InnerUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/provider/DemoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/provider/DemoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/inner/InnerInterfaceInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/inner/InnerUserInterfaceInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/inner/InnerUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d271543-11d5-4f52-adb9-1d5270d13a09.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d271543-11d5-4f52-adb9-1d5270d13a09/storage_v2/_src_/schema/haiy_api.xEy5-A.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/CustomGlobalFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/CustomGlobalFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/HaiyApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/HaiyApiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/aop/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/aop/AuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/InterfaceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/InterfaceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/UserInterfaceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/controller/UserInterfaceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/InterfaceInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/InterfaceInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/UserInterfaceInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/UserInterfaceInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/model/entity/InterfaceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/entity/InterfaceInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/model/entity/UserInterfaceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/haiy-api-common/src/main/java/com/haiy/haiyapicommon/model/entity/UserInterfaceInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/InterfaceInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/InterfaceInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/UserInterfaceInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/UserInterfaceInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/InterfaceInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/InterfaceInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/UserInterfaceInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/UserInterfaceInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/java/com/haiy/project/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/InterfaceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/InterfaceInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/UserInterfaceInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/UserInterfaceInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_backend/src/test/java/com/haiy/project/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_backend/src/test/java/com/haiy/project/service/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/haiy-api_interface/src/main/java/com/haiy/haiyapiInterface/controller/NameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/haiy-api_interface/src/main/java/com/haiy/haiyapiInterface/controller/NameController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,12 +94,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.UserInterfaceInfoServiceTest.executor": "Run",
     "Maven.haiy-api-client-sdk [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.HaiyApiGatewayApplication.executor": "Debug",
     "Spring Boot.HaiyApiInterfaceApplication.executor": "Debug",
@@ -47,6 +109,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/item/haiy-api/haiy-api_backend/src/main/java/com/haiy/project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -65,6 +128,20 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.haiy.project.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\item\haiy-api\haiy-api_backend\src\main\java\com\haiy\project" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.haiy.haiyapiclientsdk.model" />
+      <recent name="com.haiy.project.service" />
+      <recent name="com.haiy.haiyapigateway" />
+      <recent name="com.haiy.project.provider" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -74,7 +151,22 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.HaiyApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.MyApplication">
+    <configuration name="UserInterfaceInfoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="haiy-api_backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haiy.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haiy.project.service" />
+      <option name="MAIN_CLASS_NAME" value="com.haiy.project.service.UserInterfaceInfoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HaiyApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="haiy-api-gateway" />
@@ -108,6 +200,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.HaiyApiInterfaceApplication" />
+        <item itemvalue="JUnit.UserInterfaceInfoServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +222,11 @@
       <updated>1738913156874</updated>
       <workItem from="1738913159487" duration="4824000" />
       <workItem from="1738999310684" duration="3095000" />
-      <workItem from="1739003158043" duration="14879000" />
+      <workItem from="1739003158043" duration="15277000" />
+      <workItem from="1739087639520" duration="1758000" />
+      <workItem from="1739179842612" duration="16329000" />
+      <workItem from="1739266625559" duration="11915000" />
+      <workItem from="1739426631273" duration="28688000" />
     </task>
     <task id="LOCAL-00001" summary="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制">
       <option name="closed" value="true" />
@@ -139,25 +236,57 @@
       <option name="project" value="LOCAL" />
       <updated>1739031648164</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制">
+      <option name="closed" value="true" />
+      <created>1739031910782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739031910782</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add 网关，实现接口权限控制">
+      <option name="closed" value="true" />
+      <created>1739031959080</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739031959080</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制">
+      <option name="closed" value="true" />
+      <created>1739032021588</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739032021588</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="add 网关，实现接口权限控制" />
     <MESSAGE value="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制" />
     <option name="LAST_COMMIT_MESSAGE" value="add 统计接口调用次数功能&#10;add 网关，实现接口权限控制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/haiy-api-gateway/src/main/java/com/haiy/haiyapigateway/CustomGlobalFilter.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

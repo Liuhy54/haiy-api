@@ -1,4 +1,4 @@
-package com.haiy.project.service;
+package com.haiy.haiyapicommon.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.haiy.haiyapicommon.model.entity.UserInterfaceInfo;
@@ -8,8 +8,15 @@ import com.haiy.haiyapicommon.model.entity.UserInterfaceInfo;
 * @description 针对表【user_interface_info(用户调用接口关系)】的数据库操作Service
 * @createDate 2025-02-05 16:00:43
 */
-public interface UserInterfaceInfoService extends IService<UserInterfaceInfo> {
-    void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add);
+public interface InnerUserInterfaceInfoService{
+
+
+    /**
+     * 检验接口剩余调用次数是否足够
+     * @param interfaceInfoId
+     * @return
+     */
+    boolean inspectLeftNum(long interfaceInfoId, long userId);
 
     /**
      * 调用接口统计

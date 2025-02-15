@@ -2,6 +2,7 @@ package com.haiy.project.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.haiy.haiyapicommon.model.entity.User;
 import com.haiy.project.annotation.AuthCheck;
 import com.haiy.project.common.BaseResponse;
 import com.haiy.project.common.DeleteRequest;
@@ -13,7 +14,6 @@ import com.haiy.project.model.dto.post.PostAddRequest;
 import com.haiy.project.model.dto.post.PostQueryRequest;
 import com.haiy.project.model.dto.post.PostUpdateRequest;
 import com.haiy.project.model.entity.Post;
-import com.haiy.project.model.entity.User;
 import com.haiy.project.service.PostService;
 import com.haiy.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;

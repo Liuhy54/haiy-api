@@ -57,6 +57,21 @@
             <artifactId>haiy-api-client-sdk</artifactId>
             <version>0.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.haiy</groupId>
+            <artifactId>haiy-api-common</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-nacos-spring-boot-starter</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>

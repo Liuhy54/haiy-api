@@ -1,7 +1,7 @@
 package com.haiy.project.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.haiy.project.model.entity.User;
+import com.haiy.haiyapicommon.model.entity.User;
 
 /**
  * @Entity com.haiy.project.model.domain.User

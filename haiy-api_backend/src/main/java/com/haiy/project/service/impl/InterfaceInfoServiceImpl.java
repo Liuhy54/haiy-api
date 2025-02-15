@@ -1,9 +1,9 @@
 package com.haiy.project.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.haiy.haiyapicommon.model.entity.InterfaceInfo;
 import com.haiy.project.common.ErrorCode;
 import com.haiy.project.exception.BusinessException;
-import com.haiy.project.model.entity.InterfaceInfo;
 import com.haiy.project.service.InterfaceInfoService;
 import com.haiy.project.mapper.InterfaceInfoMapper;
 import org.apache.commons.lang3.StringUtils;

@@ -1,8 +1,14 @@
 package com.haiy.haiyapigateway;
 
-import cn.hutool.json.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.haiy.haiyapiclientsdk.utils.SignUtils;
+import com.haiy.haiyapicommon.model.entity.InterfaceInfo;
+import com.haiy.haiyapicommon.model.entity.User;
+import com.haiy.haiyapicommon.service.InnerInterfaceInfoService;
+import com.haiy.haiyapicommon.service.InnerUserInterfaceInfoService;
+import com.haiy.haiyapicommon.service.InnerUserService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.reactivestreams.Publisher;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -10,11 +16,8 @@ import org.springframework.core.Ordered;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferFactory;
 import org.springframework.core.io.buffer.DataBufferUtils;
-import org.springframework.core.io.buffer.DefaultDataBufferFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.http.server.reactive.ServerHttpResponseDecorator;
@@ -27,9 +30,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
-
-import static cn.hutool.http.ContentType.JSON;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 自定义全局过滤器
@@ -38,15 +40,31 @@ import static cn.hutool.http.ContentType.JSON;
 @Component
 public class CustomGlobalFilter implements GlobalFilter, Ordered {
 
+    @DubboReference
+    private InnerUserService innerUserService;
+
+    @DubboReference
+    private InnerInterfaceInfoService innerInterfaceInfoService;
+
+    @DubboReference
+     private InnerUserInterfaceInfoService innerUserInterfaceInfoService;
+
+    Lock lock = new ReentrantLock();
+
     private static final List<String> IP_WHITE_LIST = Arrays.asList("127.0.0.1");
+
+    private static final String INTERFACE_HOST = "http://localhost:8123";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         // 1. 请求日志
         ServerHttpRequest request = exchange.getRequest();
-        log.info("请求唯一标识：" + request.getId());
-        log.info("请求路径：" + request.getPath().value());
-        log.info("请求方法：" + request.getMethod());
+        String path = INTERFACE_HOST + request.getPath().value();
+        String method = request.getMethod().toString();
+        String interfaceInfoId = request.getId();
+        log.info("请求唯一标识：" + interfaceInfoId);
+        log.info("请求路径：" + path);
+        log.info("请求方法：" + method);
         log.info("请求参数：" + request.getQueryParams());
         String sourceAddress = request.getLocalAddress().getHostString();
         log.info("请求来源地址：" + sourceAddress);
@@ -65,10 +83,19 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         String timestamp = headers.getFirst("timestamp");
         String sign = headers.getFirst("sign");
         String body = headers.getFirst("body");
-        // todo 实际应该去数据库查询是否已经分配给用户
-        if (!"haiy".equals(accessKey)){
+        // 去数据库查询是否已经分配给用户
+        User invokeUser = null;
+        try {
+            invokeUser = innerUserService.getInvokeUser(accessKey);
+        } catch (Exception e){
+            log.error("getInvokeUser error", e);
+        }
+        if (invokeUser == null){
             return handleNoAuth(response);
         }
+//        if (!"haiy".equals(accessKey)){
+//            return handleNoAuth(response);
+//        }
         if (nonce != null && Long.parseLong(nonce) > 10000L) {
             return handleNoAuth(response);
         }
@@ -78,19 +105,31 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         if (currentTime  - Long.parseLong(timestamp) >= FIVE_MINUTES){
             return handleNoAuth(response);
         }
-        // todo 实际需要从数据库中拿到secretKey
-        String serverSign = SignUtils.genSign(body, "abcd");
-        if (!sign.equals(serverSign)){
+        // 从数据库中拿到secretKey
+        String secretKey = invokeUser.getSecretKey();
+        String serverSign = SignUtils.genSign(body, secretKey);
+        if (sign == null ||!sign.equals(serverSign)){
             throw new RuntimeException("无权限");
         }
-        // 4. 请求的模拟接口是否存在？
-        // todo 从数据库中查询模拟接口是否存在，以及请求方法是否匹配，(还可以校验请求参数）
-        // 5. 请求转发，调用模拟接口
-//        Mono<Void> filter = chain.filter(exchange);
-        // 6. 响应日志
-        return handleResponse(exchange, chain);
+        // 4. 请求的模拟接口是否存在，以及请求方法是否匹配
+        InterfaceInfo interfaceInfo = null;
+        try {
+            interfaceInfo = innerInterfaceInfoService.getInterfaceInfo(path, method);
+        } catch (Exception e){
+            log.error("getInterfaceInfo error", e);
+        }
+        if (interfaceInfo == null){
+            return handleNoAuth(response);
+        }
+        // 5. 请求接口是否还有剩余次数
+        if (!innerUserInterfaceInfoService.inspectLeftNum(interfaceInfo.getId(), invokeUser.getId())){
+            return handleNoAuth(response);
+        }
+        // 5. 请求转发，调用模拟接口 + 响应日志
+        //        Mono<Void> filter = chain.filter(exchange);
+        //        return filter;
+        return handleResponse(exchange, chain, interfaceInfo.getId(), invokeUser.getId());
 
-//        return filter;
     }
 
     /**
@@ -100,7 +139,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
      * @param chain
      * @return
      */
-    public Mono<Void> handleResponse(ServerWebExchange exchange, GatewayFilterChain chain) {
+    public Mono<Void> handleResponse(ServerWebExchange exchange, GatewayFilterChain chain, long interfaceInfoId, long userId) {
         try {
             // 获取原始的响应对象
             ServerHttpResponse originalResponse = exchange.getResponse();
@@ -126,6 +165,12 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
                             // 返回一个处理后的响应体
                             // (这里就理解为它在拼接字符串,它把缓冲区的数据取出来，一点一点拼接好)
                             return super.writeWith(fluxBody.map(dataBuffer -> {
+                                try {
+                                    // 7. 调用成功，接口调用次数+1 invokeCount + 1
+                                    innerUserInterfaceInfoService.invokeCount(interfaceInfoId, userId);
+                                } catch (Exception e) {
+                                    log.error("invokeCount error", e);
+                                }
                                 // 读取响应体的内容并转换为字节数组
                                 byte[] content = new byte[dataBuffer.readableByteCount()];
                                 dataBuffer.read(content);

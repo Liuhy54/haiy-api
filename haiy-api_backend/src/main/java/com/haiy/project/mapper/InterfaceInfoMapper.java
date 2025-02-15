@@ -1,7 +1,7 @@
 package com.haiy.project.mapper;
 
-import com.haiy.project.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.haiy.haiyapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author lhynb54

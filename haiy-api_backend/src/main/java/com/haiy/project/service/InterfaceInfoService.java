@@ -1,7 +1,7 @@
 package com.haiy.project.service;
 
-import com.haiy.project.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.haiy.haiyapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author lhynb54

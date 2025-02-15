@@ -1,6 +1,6 @@
 package com.haiy.project.service;
 
-import com.haiy.project.model.entity.User;
+import com.haiy.haiyapicommon.model.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
